@@ -36,7 +36,7 @@ latestPostDate = latestPostDateFile.readline()
 if jsonResponse['response']['wall'][1]['date'] > float(latestPostDate):
     if 'copy_post_date' not in jsonResponse['response']['wall'][1].keys():
         photo = jsonResponse['response']['wall'][1]['attachment']['photo']['src_big']
-        text = jsonResponse['response']['wall'][1]['attachment']['photo']['text']
+        text = jsonResponse['response']['wall'][1]['text']
 
         text = cleanhtml(text)
 
