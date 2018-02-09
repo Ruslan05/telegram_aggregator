@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="aggregator@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="aggregator">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="magento2sample"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="test"/>
+    <table id="9" parent="2" name="channel"/>
+    <table id="10" parent="2" name="post_exucuted"/>
+    <table id="11" parent="2" name="public"/>
+    <table id="12" parent="2" name="public_channel"/>
+    <table id="13" parent="2" name="public_data"/>
+    <column id="14" parent="9" name="id_channel">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="9" name="shared_url">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="17" parent="10" name="id_post_exucuted">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="10" name="id_public">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="10" name="id_channel">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="20" parent="10" name="post_date">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <index id="21" parent="10" name="id_channel_idx">
+      <ColNames>id_channel</ColNames>
+    </index>
+    <index id="22" parent="10" name="id_public_idx">
+      <ColNames>id_public</ColNames>
+    </index>
+    <index id="23" parent="10" name="id_publiic_idx">
+      <ColNames>id_public</ColNames>
+    </index>
+    <column id="24" parent="11" name="id_public">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="26" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="27" parent="11" name="url">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="11" name="owner_id">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="29" parent="11" name="id_public_data">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <index id="30" parent="11" name="t_idx">
+      <ColNames>id_public_data</ColNames>
+    </index>
+    <column id="31" parent="12" name="id_public_channel">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="12" name="id_public">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="33" parent="12" name="id_channel">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <index id="34" parent="12" name="id_channel_idx">
+      <ColNames>id_channel</ColNames>
+    </index>
+    <index id="35" parent="12" name="id_public_idx">
+      <ColNames>id_public</ColNames>
+    </index>
+    <column id="36" parent="13" name="id_public_data">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="13" name="post_text">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="38" parent="13" name="picture">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="13" name="video">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="40" parent="13" name="post_file">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="41" parent="13" name="music">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+  </database-model>
+</dataSource>
