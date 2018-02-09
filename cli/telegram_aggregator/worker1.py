@@ -1,10 +1,21 @@
 import json
 import requests
 import telepot
-from cli.telegram_aggregator.poxy import poxy_ip
-from cli.telegram_aggregator.html_converter import clean_html
-from cli.telegram_aggregator.request_builder import get_request_url
-from cli.telegram_aggregator.db_manager import get_db_connection
+import pymysql
+import socks
+import socket
+import re
+
+
+def get_db_connection():
+    conn = pymysql.connect(
+        db='aggregator',
+        user='root',
+        passwd='1',
+        host='localhost')
+
+    return conn.cursor(pymysql.cursors.DictCursor)
+
 
 db = get_db_connection()
 
@@ -77,5 +88,29 @@ def get_channel_by_id(channel_id):
     channel = db.fetchall()
     return channel[0]
 
+
+def get_request_url(owner_id):
+    url = 'https://api.vk.com/method/wall.get?' \
+          'owner_id=' + owner_id + '&' \
+          'domain=&' \
+          'offset=1&' \
+          'count=1&' \
+          'filter=owner&' \
+          'extended=1&' \
+          'access_token=686d71abecb677cfa89dea57c24b483e1192687ce78bbd92b4f6ccf059fda1458af809bdf134d8fe35126'
+
+    return url
+
+
+def poxy_ip():
+    socks.set_default_proxy(socks.SOCKS5, '127.0.0.1', 9050)
+    socket.socket = socks.socksocket
+
+
+def clean_html(text):
+    clean_r = re.compile('<.*?>')
+    clean_text = re.sub(clean_r, ' ', text)
+
+    return clean_text
 
 execute()
