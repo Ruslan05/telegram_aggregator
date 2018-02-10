@@ -17,18 +17,18 @@ db = connection.cursor(pymysql.cursors.DictCursor)
 
 
 def execute():
-    poxy_ip()
+    # poxy_ip()
 
     public_list = get_public_list()
 
     for public in public_list:
-        url = get_request_url(public['owner_id'])
-        text_response = requests.get(url).text
-        json_response = json.loads(text_response)
+        # url = get_request_url(public['owner_id'])
+        # text_response = requests.get(url).text
+        # json_response = json.loads(text_response)
 
-        # filePath = '/Users/Ruslan/PycharmProjects/untitled/cli/telegram_aggregator/response.json'
-        # connection_file = open(filePath, encoding='utf-8')
-        # json_response = json.load(connection_file)
+        filePath = '/Users/Ruslan/PycharmProjects/untitled/cli/telegram_aggregator/response.json'
+        connection_file = open(filePath, encoding='utf-8')
+        json_response = json.load(connection_file)
 
         post_date = json_response['response']['wall'][1]['date']
         channel_id = get_channel_id(public)
@@ -39,7 +39,7 @@ def execute():
                 and not is_adverb(json_response):
             channel = get_channel_by_id(channel_id)
 
-            if channel['is_active'] > 0:
+            if channel is not None and channel['is_active'] > 0:
                 photo = xpath_get(json_response['response']['wall'][1], public['picture'])
                 text = xpath_get(json_response['response']['wall'][1], public['post_text'])
                 vidoe = xpath_get(json_response['response']['wall'][1], public['video'])
@@ -50,22 +50,39 @@ def execute():
 
                 try:
                     bot = telepot.Bot('406220380:AAGiFCUDebSNTE6MVhPlybYL1cBTz0QvujI')
-                    if photo is not None:
-                        bot.sendPhoto(channel['name'], photo, text)
-                    else:
-                        bot.sendMessage(channel['name'], text)
+                    if len(public['picture']) and photo is not None:
+                        if text is not None:
+                            bot.sendPhoto(channel['name'], photo, text)
+                            tag_posted_post(public_id, channel_id, post_date)
+                        else:
+                            bot.sendPhoto(channel['name'], photo)
+                            tag_posted_post(public_id, channel_id, post_date)
 
-                    tag_posted_post(public_id, channel_id, post_date)
+                    if not len(public['picture']) or photo is None and len(text):
+                        bot.sendMessage(channel['name'], text)
+                        tag_posted_post(public_id, channel_id, post_date)
+
                 except telepot.exception.TelegramError:
                     print('Channel post error')
 
 
 def tag_posted_post(public_id, channel_id, post_date):
     db.execute(
-        "INSERT INTO post_exucuted (id_public, id_channel, post_date)"
-        " values(" + str(public_id) + "," + str(channel_id) + "," + str(post_date) + ")"
+        "SELECT * FROM post_exucuted WHERE " +
+        "id_public = " + str(public_id) + " AND id_channel = " + str(channel_id)
     )
-    connection.commit()
+    if db.fetchall().__len__():
+        db.execute(
+            "UPDATE post_exucuted SET post_date=" + str(post_date) + " WHERE id_public = " +
+            str(public_id) + " AND id_channel = " + str(channel_id)
+        )
+        connection.commit()
+    else:
+        db.execute(
+            "INSERT INTO post_exucuted (id_public, id_channel, post_date)"
+            " values(" + str(public_id) + "," + str(channel_id) + "," + str(post_date) + ")"
+        )
+        connection.commit()
 
 
 def get_public_list():
@@ -111,7 +128,7 @@ def get_request_url(owner_id):
     url = 'https://api.vk.com/method/wall.get?' \
           'owner_id=' + owner_id + '&' \
           'domain=&' \
-          'offset=1&' \
+          'offset=2&' \
           'count=1&' \
           'filter=owner&' \
           'extended=1&' \
