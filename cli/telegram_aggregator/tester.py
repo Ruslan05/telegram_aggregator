@@ -1,4 +1,4 @@
-filePath = '/home/pi/Desktop/architecture_aggretator/tester.txt'
+string_val = "Я ПОМНЮ ЧУДНОЕ МГНОВЕНЬЕ<br><br>Я помню чудное мгновенье:<br>Передо мной явилась ты,<br>Как мимолетное виденье,"
 
-with open(filePath, 'a') as file:
-    file.write('tester')
+string_val = "\n".join(string_val.split("<br>"))
+print(string_val)

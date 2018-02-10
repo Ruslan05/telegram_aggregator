@@ -26,8 +26,9 @@ CREATE TABLE `channel` (
   `id_channel` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `shared_url` varchar(45) DEFAULT NULL,
+  `is_active` int(11) DEFAULT 1,
   PRIMARY KEY (`id_channel`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,7 @@ CREATE TABLE `channel` (
 
 LOCK TABLES `channel` WRITE;
 /*!40000 ALTER TABLE `channel` DISABLE KEYS */;
-INSERT INTO `channel` VALUES (2,'@architecture_stories','https://t.me/architecture_stories');
+INSERT INTO `channel` VALUES (2,'@architecture_stories','https://t.me/architecture_stories',0),(3,'@grown_poetry',NULL,1);
 /*!40000 ALTER TABLE `channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,7 +49,7 @@ DROP TABLE IF EXISTS `post_exucuted`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `post_exucuted` (
-  `id_post_exucuted` int(11) NOT NULL,
+  `id_post_exucuted` int(11) NOT NULL AUTO_INCREMENT,
   `id_public` int(11) DEFAULT NULL,
   `id_channel` int(11) DEFAULT NULL,
   `post_date` varchar(45) DEFAULT NULL,
@@ -57,7 +58,7 @@ CREATE TABLE `post_exucuted` (
   KEY `id_channel_idx` (`id_channel`),
   CONSTRAINT `id_channel` FOREIGN KEY (`id_channel`) REFERENCES `channel` (`id_channel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_publiic` FOREIGN KEY (`id_public`) REFERENCES `public` (`id_public`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +67,7 @@ CREATE TABLE `post_exucuted` (
 
 LOCK TABLES `post_exucuted` WRITE;
 /*!40000 ALTER TABLE `post_exucuted` DISABLE KEYS */;
+INSERT INTO `post_exucuted` VALUES (1,2,2,'1517597571'),(2,2,2,'1517597575'),(3,2,2,'1518267518'),(6,3,3,'1518267518');
 /*!40000 ALTER TABLE `post_exucuted` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +88,7 @@ CREATE TABLE `public` (
   PRIMARY KEY (`id_public`),
   KEY `t_idx` (`id_public_data`),
   CONSTRAINT `id_public_data` FOREIGN KEY (`id_public_data`) REFERENCES `public_data` (`id_public_data`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +97,7 @@ CREATE TABLE `public` (
 
 LOCK TABLES `public` WRITE;
 /*!40000 ALTER TABLE `public` DISABLE KEYS */;
-INSERT INTO `public` VALUES (2,'Архитектор','Онлайн чат архитекторов. Живое общение и помощь в обучении!\n','https://vk.com/iamarchitect','-98559377',1);
+INSERT INTO `public` VALUES (2,'Архитектор','Онлайн чат архитекторов. Живое общение и помощь в обучении!\n','https://vk.com/iamarchitect','-98559377',1),(3,'Лучшие стихи великих поэтов | Литература','Лучшие стихи великих поэтов | Литература','https://vk.com/1poetry','-38683579',2);
 /*!40000 ALTER TABLE `public` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +117,7 @@ CREATE TABLE `public_channel` (
   KEY `id_channel_idx` (`id_channel`),
   CONSTRAINT `id_channel_` FOREIGN KEY (`id_channel`) REFERENCES `channel` (`id_channel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_public` FOREIGN KEY (`id_public`) REFERENCES `public` (`id_public`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,6 +126,7 @@ CREATE TABLE `public_channel` (
 
 LOCK TABLES `public_channel` WRITE;
 /*!40000 ALTER TABLE `public_channel` DISABLE KEYS */;
+INSERT INTO `public_channel` VALUES (2,2,2),(3,3,3);
 /*!40000 ALTER TABLE `public_channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +145,7 @@ CREATE TABLE `public_data` (
   `post_file` varchar(255) DEFAULT NULL,
   `music` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_public_data`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +154,7 @@ CREATE TABLE `public_data` (
 
 LOCK TABLES `public_data` WRITE;
 /*!40000 ALTER TABLE `public_data` DISABLE KEYS */;
-INSERT INTO `public_data` VALUES (1,'[\'response\'][\'wall\'][1][\'text\']','[\'response\'][\'wall\'][1][\'attachment\'][\'photo\'][\'src_big\']',NULL,NULL,NULL);
+INSERT INTO `public_data` VALUES (1,'/text','attachment/photo/src_big',NULL,NULL,NULL),(2,'/text','',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `public_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-09 22:53:52
+-- Dump completed on 2018-02-10 20:27:22

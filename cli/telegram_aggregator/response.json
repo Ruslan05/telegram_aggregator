@@ -1,0 +1,85 @@
+{
+	"response": {
+		"wall": [77469, {
+			"id": 177686,
+			"from_id": -38683579,
+			"to_id": -38683579,
+			"date": 1518267518,
+			"marked_as_ads": 0,
+			"post_type": "post",
+			"text": "Я ПОМНЮ ЧУДНОЕ МГНОВЕНЬЕ<br><br>Я помню чудное мгновенье:<br>Передо мной явилась ты,<br>Как мимолетное виденье,<br>Как гений чистой красоты.<br><br>В томленьях грусти безнадежной,<br>В тревогах шумной суеты,<br>Звучал мне долго голос нежный<br>И снились милые черты.<br><br>Шли годы. Бурь порыв мятежный<br>Рассеял прежние мечты,<br>И я забыл твой голос нежный,<br>Твои небесные черты.<br><br>В глуши, во мраке заточенья<br>Тянулись тихо дни мои<br>Без божества, без вдохновенья,<br>Без слез, без жизни, без любви.<br><br>Душе настало пробужденье:<br>И вот опять явилась ты,<br>Как мимолетное виденье,<br>Как гений чистой красоты.<br><br>И сердце бьется в упоенье,<br>И для него воскресли вновь<br>И божество, и вдохновенье,<br>И жизнь,и слезы,и любовь.<br><br>А.С.Пушкин",
+			"media": {
+				"type": "photo",
+				"owner_id": -38683579,
+				"item_id": 456263102,
+				"thumb_src": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e10\/R7X1ru_KZpQ.jpg"
+			},
+			"attachment": {
+				"type": "photo",
+				"photo": {
+					"pid": 456263102,
+					"aid": -7,
+					"owner_id": -38683579,
+					"user_id": 100,
+					"src": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e10\/R7X1ru_KZpQ.jpg",
+					"src_big": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e11\/gvx2ikpkAB0.jpg",
+					"src_small": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e0f\/PqaJSNCit2A.jpg",
+					"width": 604,
+					"height": 488,
+					"text": "",
+					"created": 1518267517,
+					"post_id": 177686,
+					"access_key": "0041959f5da87baa10"
+				}
+			},
+			"attachments": [{
+				"type": "photo",
+				"photo": {
+					"pid": 456263102,
+					"aid": -7,
+					"owner_id": -38683579,
+					"user_id": 100,
+					"src": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e10\/R7X1ru_KZpQ.jpg",
+					"src_big": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e11\/gvx2ikpkAB0.jpg",
+					"src_small": "https:\/\/pp.userapi.com\/c7008\/v7008301\/68e0f\/PqaJSNCit2A.jpg",
+					"width": 604,
+					"height": 488,
+					"text": "",
+					"created": 1518267517,
+					"post_id": 177686,
+					"access_key": "0041959f5da87baa10"
+				}
+			}],
+			"post_source": {
+				"type": "api"
+			},
+			"comments": {
+				"count": 0,
+				"can_post": 0
+			},
+			"likes": {
+				"count": 1361,
+				"user_likes": 0,
+				"can_like": 1,
+				"can_publish": 1
+			},
+			"reposts": {
+				"count": 242,
+				"user_reposted": 0
+			},
+			"online": 0,
+			"reply_count": 0
+		}],
+		"profiles": [],
+		"groups": [{
+			"gid": 38683579,
+			"name": "Лучшие стихи великих поэтов | Литература",
+			"screen_name": "1poetry",
+			"is_closed": 0,
+			"type": "page",
+			"photo": "https:\/\/pp.userapi.com\/c633222\/v633222228\/33b89\/L57neeKxXWs.jpg",
+			"photo_medium": "https:\/\/pp.userapi.com\/c633222\/v633222228\/33b88\/_iHr0HDfO1U.jpg",
+			"photo_big": "https:\/\/pp.userapi.com\/c633222\/v633222228\/33b87\/NEdlGdijIno.jpg"
+		}]
+	}
+}
