@@ -53,7 +53,7 @@ def execute():
                     if len(public['picture']) and photo is not None and text is not None and len(text) <= 199:
                         bot.sendPhoto(channel['name'], photo, text)
                         tag_posted_post(public_id, channel_id, post_date)
-                        return
+                        continue
 
                     if len(text):
                         bot.sendMessage(channel['name'], text)
