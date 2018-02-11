@@ -9,7 +9,7 @@ import re
 
 connection = pymysql.connect(
     db='aggregator',
-    user='root',
+    user='admin',
     passwd='1',
     host='localhost')
 
@@ -17,18 +17,18 @@ db = connection.cursor(pymysql.cursors.DictCursor)
 
 
 def execute():
-    # poxy_ip()
+    poxy_ip()
 
     public_list = get_public_list()
 
     for public in public_list:
-        # url = get_request_url(public['owner_id'])
-        # text_response = requests.get(url).text
-        # json_response = json.loads(text_response)
+        url = get_request_url(public['owner_id'])
+        text_response = requests.get(url).text
+        json_response = json.loads(text_response)
 
-        filePath = '/Users/Ruslan/PycharmProjects/untitled/cli/telegram_aggregator/response.json'
-        connection_file = open(filePath, encoding='utf-8')
-        json_response = json.load(connection_file)
+        # filePath = '/Users/Ruslan/PycharmProjects/untitled/cli/telegram_aggregator/response.json'
+        # connection_file = open(filePath, encoding='utf-8')
+        # json_response = json.load(connection_file)
 
         post_date = json_response['response']['wall'][1]['date']
         channel_id = get_channel_id(public)
@@ -50,15 +50,12 @@ def execute():
 
                 try:
                     bot = telepot.Bot('406220380:AAGiFCUDebSNTE6MVhPlybYL1cBTz0QvujI')
-                    if len(public['picture']) and photo is not None:
-                        if text is not None:
-                            bot.sendPhoto(channel['name'], photo, text)
-                            tag_posted_post(public_id, channel_id, post_date)
-                        else:
-                            bot.sendPhoto(channel['name'], photo)
-                            tag_posted_post(public_id, channel_id, post_date)
+                    if len(public['picture']) and photo is not None and text is not None and len(text) <= 199:
+                        bot.sendPhoto(channel['name'], photo, text)
+                        tag_posted_post(public_id, channel_id, post_date)
+                        return
 
-                    if not len(public['picture']) or photo is None and len(text):
+                    if len(text):
                         bot.sendMessage(channel['name'], text)
                         tag_posted_post(public_id, channel_id, post_date)
 
@@ -128,7 +125,7 @@ def get_request_url(owner_id):
     url = 'https://api.vk.com/method/wall.get?' \
           'owner_id=' + owner_id + '&' \
           'domain=&' \
-          'offset=2&' \
+          'offset=1&' \
           'count=1&' \
           'filter=owner&' \
           'extended=1&' \
@@ -160,5 +157,6 @@ def xpath_get(mydict, path):
         pass
 
     return elem
+
 
 execute()

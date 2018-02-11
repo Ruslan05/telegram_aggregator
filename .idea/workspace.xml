@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4de0716-33a3-4191-b859-a848dc3a6f8d" name="Default" comment="" />
+    <list default="true" id="d4de0716-33a3-4191-b859-a848dc3a6f8d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cli/telegram_aggregator/worker.py" afterPath="$PROJECT_DIR$/cli/telegram_aggregator/worker.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/untitled$untitled.coverage" NAME="aggregator Coverage Results" MODIFIED="1515429115830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/untitled$aggregator.coverage" NAME="aggregator Coverage Results" MODIFIED="1517662027393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/untitled$test.coverage" NAME="test Coverage Results" MODIFIED="1518296522110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cli/telegram_aggregator" />
+    <SUITE FILE_PATH="coverage/untitled$test.coverage" NAME="test Coverage Results" MODIFIED="1518337545043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cli/telegram_aggregator" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -70,34 +72,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="worker.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="worker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/worker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="57" column="65" lean-forward="true" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+            <state relative-caret-position="224">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="30" selection-end-column="52" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1518296586000" expanded="true" signature="2606:2665" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="2606:2704" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="2606:2705" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="2606:2724" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="2606:5200" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="2796:2904" ph="UPDATE post_... " />
-                <marker date="1518296586000" expanded="true" signature="2796:2924" ph="UPDATE post_... " />
-                <marker date="1518296586000" expanded="true" signature="2796:2943" ph="UPDATE post_... " />
-                <marker date="1518296586000" expanded="true" signature="3025:3085" ph="INSERT INTO post_exucuted... " />
-                <marker date="1518296586000" expanded="true" signature="3259:3349" ph="SELECT * FRO... public" />
-                <marker date="1518296586000" expanded="true" signature="3423:3479" ph="SELECT id_ch... public_channel" />
-                <marker date="1518296586000" expanded="true" signature="3663:3799" ph="SELECT * FRO... post_exucuted" />
-                <marker date="1518296586000" expanded="true" signature="4174:4215" ph="SELECT * FRO... channel" />
-                <marker date="1518296586000" expanded="true" signature="4174:4256" ph="SELECT * FRO... channel" />
+                <marker date="1518337671000" expanded="true" signature="2402:2461" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="2402:2500" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="2402:2501" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="2402:2520" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="2402:4997" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="2592:2700" ph="UPDATE post_... " />
+                <marker date="1518337671000" expanded="true" signature="2592:2720" ph="UPDATE post_... " />
+                <marker date="1518337671000" expanded="true" signature="2592:2739" ph="UPDATE post_... " />
+                <marker date="1518337671000" expanded="true" signature="2821:2881" ph="INSERT INTO post_exucuted... " />
+                <marker date="1518337671000" expanded="true" signature="3055:3145" ph="SELECT * FRO... public" />
+                <marker date="1518337671000" expanded="true" signature="3219:3275" ph="SELECT id_ch... public_channel" />
+                <marker date="1518337671000" expanded="true" signature="3459:3595" ph="SELECT * FRO... post_exucuted" />
+                <marker date="1518337671000" expanded="true" signature="3970:4011" ph="SELECT * FRO... channel" />
+                <marker date="1518337671000" expanded="true" signature="3970:4052" ph="SELECT * FRO... channel" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public" pinned="false" current-in-tab="false">
-        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public">
+      <file leaf-file-name="post_exucuted" pinned="false" current-in-tab="false">
+        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.post_exucuted">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -105,20 +107,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public_data" pinned="false" current-in-tab="false">
-        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public_data">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="channel" pinned="false" current-in-tab="false">
-        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.channel">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="helper.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/helper.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,50 +127,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.5/site-packages/telepot/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="504" column="39" lean-forward="false" selection-start-line="504" selection-start-column="35" selection-end-line="504" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post_exucuted" pinned="false" current-in-tab="true">
-        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.post_exucuted">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worker2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/worker2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="response.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/response.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="158" lean-forward="false" selection-start-line="0" selection-start-column="158" selection-end-line="0" selection-end-column="158" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="public_channel" pinned="false" current-in-tab="false">
-        <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public_channel">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -202,6 +158,7 @@
       <find>copy_post_date</find>
       <find>FROM channel</find>
       <find>jsonResponse</find>
+      <find>взаим</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -246,6 +203,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/console.sql" />
         <option value="$PROJECT_DIR$/cli/telegram_aggregator/tester.py" />
         <option value="$PROJECT_DIR$/cli/telegram_aggregator/worker1.py" />
+        <option value="$PROJECT_DIR$/cli/telegram_aggregator/helper.txt" />
+        <option value="$PROJECT_DIR$/cli/telegram_aggregator/test.py" />
         <option value="$PROJECT_DIR$/cli/telegram_aggregator/response.json" />
         <option value="$PROJECT_DIR$/cli/telegram_aggregator/worker.py" />
       </list>
@@ -399,11 +358,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29711142" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3269934" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29711142" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29711142" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20516963" sideWeight="0.4926931" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24878837" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24878837" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5073069" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3810179" sideWeight="0.49353796" order="3" side_tool="false" content_ui="tabs" />
@@ -462,34 +421,16 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="161" />
+      <option name="time" value="168" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="is_already_posted(public_id, channel_id, post_date)" />
-        <watch expression="is_repost(jsonResponse)" />
-        <watch expression="is_adverb(jsonResponse)" />
-        <watch expression="already_posted_posts.__len__()" />
-        <watch expression="_rectify(p)" />
-        <watch expression="len(public['picture'])" language="Python" />
+        <watch expression="&quot;ВЗАИМНОСТЬ  Ты долгое время Считала наивно, Что всё в этой жизни Должно быть взаимно. Взаимной должна быть твоя доброта… Но щедрость, С которой ты ею делилась, Порою тебя повергала в немилость У тех,&quot;.__len__()" language="Python" />
+        <watch expression="len(public['picture'])" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="867" column="8" lean-forward="false" selection-start-line="867" selection-start-column="8" selection-end-line="867" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instagram/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -651,14 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/python3/3.5.2_3/Frameworks/Python.framework/Versions/3.5/lib/python3.5/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -770,7 +703,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.5/site-packages/telepot/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="504" column="39" lean-forward="false" selection-start-line="504" selection-start-column="35" selection-end-line="504" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python3/3.5.2_3/Frameworks/Python.framework/Versions/3.5/lib/python3.5/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.channel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public_data">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -785,57 +758,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.5/site-packages/telepot/__init__.py">
+    <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/helper.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="504" column="39" lean-forward="false" selection-start-line="504" selection-start-column="35" selection-end-line="504" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public_data">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/89b29c5c/e1cf21cf-d9c9-4fe4-bd48-3fa86bb52528/aggregator.public">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/response.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="158" lean-forward="false" selection-start-line="0" selection-start-column="158" selection-end-line="0" selection-end-column="158" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/worker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="57" column="65" lean-forward="true" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1518296586000" expanded="true" signature="2606:2665" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="2606:2704" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="2606:2705" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="2606:2724" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="2606:5200" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="2796:2904" ph="UPDATE post_... " />
-            <marker date="1518296586000" expanded="true" signature="2796:2924" ph="UPDATE post_... " />
-            <marker date="1518296586000" expanded="true" signature="2796:2943" ph="UPDATE post_... " />
-            <marker date="1518296586000" expanded="true" signature="3025:3085" ph="INSERT INTO post_exucuted... " />
-            <marker date="1518296586000" expanded="true" signature="3259:3349" ph="SELECT * FRO... public" />
-            <marker date="1518296586000" expanded="true" signature="3423:3479" ph="SELECT id_ch... public_channel" />
-            <marker date="1518296586000" expanded="true" signature="3663:3799" ph="SELECT * FRO... post_exucuted" />
-            <marker date="1518296586000" expanded="true" signature="4174:4215" ph="SELECT * FRO... channel" />
-            <marker date="1518296586000" expanded="true" signature="4174:4256" ph="SELECT * FRO... channel" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,6 +778,30 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/telegram_aggregator/worker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="30" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1518337671000" expanded="true" signature="2402:2461" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="2402:2500" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="2402:2501" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="2402:2520" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="2402:4997" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="2592:2700" ph="UPDATE post_... " />
+            <marker date="1518337671000" expanded="true" signature="2592:2720" ph="UPDATE post_... " />
+            <marker date="1518337671000" expanded="true" signature="2592:2739" ph="UPDATE post_... " />
+            <marker date="1518337671000" expanded="true" signature="2821:2881" ph="INSERT INTO post_exucuted... " />
+            <marker date="1518337671000" expanded="true" signature="3055:3145" ph="SELECT * FRO... public" />
+            <marker date="1518337671000" expanded="true" signature="3219:3275" ph="SELECT id_ch... public_channel" />
+            <marker date="1518337671000" expanded="true" signature="3459:3595" ph="SELECT * FRO... post_exucuted" />
+            <marker date="1518337671000" expanded="true" signature="3970:4011" ph="SELECT * FRO... channel" />
+            <marker date="1518337671000" expanded="true" signature="3970:4052" ph="SELECT * FRO... channel" />
+          </folding>
         </state>
       </provider>
     </entry>

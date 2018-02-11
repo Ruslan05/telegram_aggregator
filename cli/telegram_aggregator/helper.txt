@@ -1,0 +1,2 @@
+https://api.vk.com/method/wall.get?owner_id=-38683579&domain=&offset=4&count=1&extended=1&access_token=686d71abecb677cfa89dea57c24b483e1192687ce78bbd92b4f6ccf059fda1458af809bdf134d8fe35126
+https://vk.com/dev/wall.get?params[owner_id]=-38683579&params[offset]=1&params[count]=1&params[filter]=owner&params[extended]=1&params[v]=5.71
