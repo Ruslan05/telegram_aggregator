@@ -28,7 +28,7 @@ CREATE TABLE `channel` (
   `shared_url` varchar(45) DEFAULT NULL,
   `is_active` int(11) DEFAULT 1,
   PRIMARY KEY (`id_channel`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `channel` (
 
 LOCK TABLES `channel` WRITE;
 /*!40000 ALTER TABLE `channel` DISABLE KEYS */;
-INSERT INTO `channel` VALUES (2,'@architecture_stories','https://t.me/architecture_stories',1),(3,'@grown_poetry',NULL,1);
+INSERT INTO `channel` VALUES (2,'@architecture_stories','https://t.me/architecture_stories',1),(3,'@grown_poetry',NULL,1),(4,'@amazing_images','https://t.me/amazing_images',1),(5,'@prime_movies','https://t.me/prime_movies',1),(6,'@ifunny_stories','https://t.me/ifunny_stories',1),(7,'@footballishe','https://t.me/footballishe',1),(8,'@sketch_movie','https://t.me/sketch_movie',1);
 /*!40000 ALTER TABLE `channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `post_exucuted` (
   KEY `id_channel_idx` (`id_channel`),
   CONSTRAINT `id_channel` FOREIGN KEY (`id_channel`) REFERENCES `channel` (`id_channel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_publiic` FOREIGN KEY (`id_public`) REFERENCES `public` (`id_public`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `post_exucuted` (
 
 LOCK TABLES `post_exucuted` WRITE;
 /*!40000 ALTER TABLE `post_exucuted` DISABLE KEYS */;
-INSERT INTO `post_exucuted` VALUES (13,2,2,'1'),(14,3,3,'1');
+INSERT INTO `post_exucuted` VALUES (13,2,2,'1520523600'),(14,3,3,'1518375496'),(15,5,4,'1520514060'),(16,7,5,'1520521801'),(17,4,2,'1520410440'),(18,8,8,'1520523004'),(19,9,7,'1520523300'),(20,10,6,'1520523003');
 /*!40000 ALTER TABLE `post_exucuted` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +88,7 @@ CREATE TABLE `public` (
   PRIMARY KEY (`id_public`),
   KEY `t_idx` (`id_public_data`),
   CONSTRAINT `id_public_data` FOREIGN KEY (`id_public_data`) REFERENCES `public_data` (`id_public_data`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `public` (
 
 LOCK TABLES `public` WRITE;
 /*!40000 ALTER TABLE `public` DISABLE KEYS */;
-INSERT INTO `public` VALUES (2,'Архитектор','Онлайн чат архитекторов. Живое общение и помощь в обучении!\n','https://vk.com/iamarchitect','-98559377',1),(3,'Лучшие стихи великих поэтов | Литература','Лучшие стихи великих поэтов | Литература','https://vk.com/1poetry','-38683579',2);
+INSERT INTO `public` VALUES (2,'Архитектор','Онлайн чат архитекторов. Живое общение и помощь в обучении!\n','https://vk.com/iamarchitect','-98559377',1),(3,'Лучшие стихи великих поэтов | Литература','Лучшие стихи великих поэтов | Литература','https://vk.com/1poetry','-38683579',2),(4,'Архитектура',NULL,NULL,'-107886736',3),(5,'Невыносимо красиво',NULL,NULL,'-106186699',4),(7,'5 лучших фильмов\n',NULL,NULL,'-26750264',5),(8,'Кусочек фильма',NULL,'https://vk.com/kusochekf','-70493648',6),(9,'Реальный Футбол',NULL,'https://vk.com/refoot','-71474813',7),(10,'Смейся до слез',NULL,'https://vk.com/ifun','-26419239',8);
 /*!40000 ALTER TABLE `public` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +117,7 @@ CREATE TABLE `public_channel` (
   KEY `id_channel_idx` (`id_channel`),
   CONSTRAINT `id_channel_` FOREIGN KEY (`id_channel`) REFERENCES `channel` (`id_channel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_public` FOREIGN KEY (`id_public`) REFERENCES `public` (`id_public`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `public_channel` (
 
 LOCK TABLES `public_channel` WRITE;
 /*!40000 ALTER TABLE `public_channel` DISABLE KEYS */;
-INSERT INTO `public_channel` VALUES (2,2,2),(3,3,3);
+INSERT INTO `public_channel` VALUES (2,2,2),(3,3,3),(4,4,2),(5,5,4),(7,7,5),(8,8,8),(9,9,7),(10,10,6);
 /*!40000 ALTER TABLE `public_channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,12 +140,12 @@ DROP TABLE IF EXISTS `public_data`;
 CREATE TABLE `public_data` (
   `id_public_data` int(11) NOT NULL AUTO_INCREMENT,
   `post_text` varchar(255) DEFAULT NULL,
-  `picture` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
   `video` varchar(255) DEFAULT NULL,
   `post_file` varchar(255) DEFAULT NULL,
   `music` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_public_data`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +154,7 @@ CREATE TABLE `public_data` (
 
 LOCK TABLES `public_data` WRITE;
 /*!40000 ALTER TABLE `public_data` DISABLE KEYS */;
-INSERT INTO `public_data` VALUES (1,'/text','attachment/photo/src_big',NULL,NULL,NULL),(2,'/text','attachment/photo/src_big',NULL,NULL,NULL);
+INSERT INTO `public_data` VALUES (1,'/text','/photo/src_big',NULL,NULL,NULL),(2,'/text','/photo/src_big',NULL,NULL,NULL),(3,'/text','/photo/src_big',NULL,NULL,NULL),(4,'/text','/photo/src_big',NULL,NULL,NULL),(5,'/text','/photo/src_big',NULL,NULL,NULL),(6,'/text','/photo/src_big',NULL,NULL,NULL),(7,'/text','/photo/src_big',NULL,NULL,NULL),(8,'/text','/photo/src_big',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `public_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -167,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-10 23:04:22
+-- Dump completed on 2018-03-08 17:48:08
