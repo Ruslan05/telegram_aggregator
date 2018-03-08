@@ -9,7 +9,7 @@ import re
 
 connection = pymysql.connect(
     db='aggregator',
-    user='admin',
+    user='root',
     passwd='1',
     host='localhost')
 
@@ -31,6 +31,7 @@ def execute():
         # json_response = json.load(connection_file)
 
         post_date = json_response['response']['wall'][1]['date']
+        photo_attachments = filter_by_photo_attachment(json_response['response']['wall'][1]['attachments'])
         channel_id = get_channel_id(public)
         public_id = public['id_public']
 
@@ -40,27 +41,66 @@ def execute():
             channel = get_channel_by_id(channel_id)
 
             if channel is not None and channel['is_active'] > 0:
-                photo = xpath_get(json_response['response']['wall'][1], public['picture'])
-                text = xpath_get(json_response['response']['wall'][1], public['post_text'])
-                vidoe = xpath_get(json_response['response']['wall'][1], public['video'])
-                file = xpath_get(json_response['response']['wall'][1], public['post_file'])
-                music = xpath_get(json_response['response']['wall'][1], public['music'])
+                bot = telepot.Bot('406220380:AAGiFCUDebSNTE6MVhPlybYL1cBTz0QvujI')
 
-                text = clean_html(text)
+                if photo_attachments.__len__() > 1:
+                    media_group = []
+                    text = xpath_get(json_response['response']['wall'][1], public['post_text'])
+                    caption_used = False
 
-                try:
-                    bot = telepot.Bot('406220380:AAGiFCUDebSNTE6MVhPlybYL1cBTz0QvujI')
-                    if len(public['picture']) and photo is not None and text is not None and len(text) <= 199:
-                        bot.sendPhoto(channel['name'], photo, text)
+                    for attachment in photo_attachments:
+
+                        caption = xpath_get(attachment[attachment['type']], public['post_text'])
+
+                        if caption is None or len(caption) >= 200 or len(caption) == 0:
+                            caption = text
+
+                        if caption_used:
+                            caption = ''
+
+                        media = {
+                            'type': attachment['type'],
+                            'media': xpath_get(attachment, public[attachment['type']]),
+                            'caption': caption
+                        }
+
+                        if caption:
+                            caption_used = True
+
+                        media_group.append(media)
+
+                    try:
+                        bot.sendMediaGroup(channel['name'], media_group)
                         tag_posted_post(public_id, channel_id, post_date)
-                        continue
 
-                    if len(text):
-                        bot.sendMessage(channel['name'], text)
-                        tag_posted_post(public_id, channel_id, post_date)
+                    except telepot.exception.TelegramError:
+                        print('Channel post error')
 
-                except telepot.exception.TelegramError:
-                    print('Channel post error')
+                else:
+                    photo = xpath_get(json_response['response']['wall'][1]['attachments'][0], public['photo'])
+                    text = xpath_get(json_response['response']['wall'][1], public['post_text'])
+                    vidoe = xpath_get(json_response['response']['wall'][1]['attachments'][0], public['video'])
+                    file = xpath_get(json_response['response']['wall'][1]['attachments'][0], public['post_file'])
+                    music = xpath_get(json_response['response']['wall'][1]['attachments'][0], public['music'])
+
+                    text = clean_html(text)
+
+                    try:
+
+                        #photo and captured text <=199
+                        if len(public['photo']) and photo is not None and text is not None and len(text) <= 199:
+                            bot.sendPhoto(channel['name'], photo, text)
+                            tag_posted_post(public_id, channel_id, post_date)
+                            continue
+
+                        #text and if exist photo
+                        if len(text):
+                            bot.sendMessage(channel['name'], text)
+                            bot.sendPhoto(channel['name'], photo, None, True)
+                            tag_posted_post(public_id, channel_id, post_date)
+
+                    except telepot.exception.TelegramError:
+                        print('Channel post error')
 
 
 def tag_posted_post(public_id, channel_id, post_date):
@@ -129,6 +169,7 @@ def get_request_url(owner_id):
           'count=1&' \
           'filter=owner&' \
           'extended=1&' \
+          'v=4.97&' \
           'access_token=686d71abecb677cfa89dea57c24b483e1192687ce78bbd92b4f6ccf059fda1458af809bdf134d8fe35126'
 
     return url
@@ -157,6 +198,15 @@ def xpath_get(mydict, path):
         pass
 
     return elem
+
+
+def filter_by_photo_attachment(attachments):
+    photo_attachments = []
+    for attachment in attachments:
+        if 'photo' in attachment:
+            photo_attachments.append(attachment)
+
+    return photo_attachments
 
 
 execute()
