@@ -1,0 +1,56 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Publics{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <br/>
+        {{ utils.flashed_messages() }}
+        <br/>
+        <h1 style="text-align:center;">Publics</h1>
+        {% if publics %}
+          <hr class="intro-divider">
+          <div class="center">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th width="15%"> Name </th>
+                  <th width="40%"> Description </th>
+                  <th width="15%"> Url </th>
+                  <th width="15%"> Owner Id </th>
+                  <th width="15%"> Public data </th>
+                  <!--<th width="15%"> Edit </th>-->
+                  <!--<th width="15%"> Delete </th>-->
+                </tr>
+              </thead>
+              <tbody>
+              {% for public in publics %}
+                <tr>
+                  <td> {{ public.name }} </td>
+                  <td> {{ public.description }} </td>
+                  <td> {{ public.url }} </td>
+                  <td> {{ public.owner_id }} </td>
+                  <td> {{ public.id_public_data }} </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div style="text-align: center">
+        {% else %}
+          <div style="text-align: center">
+            <h3> No publics have been added. </h3>
+            <hr class="intro-divider">
+        {% endif %}
+          <a href="{{ url_for('admin.add_department') }}" class="btn btn-default btn-lg">
+            <i class="fa fa-plus"></i>
+            Add public
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
